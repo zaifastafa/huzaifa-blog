@@ -21,70 +21,18 @@ languages:
     weight: 1
     menu:
       main:
-        - name: Archive
-          url: archives
+        - name: General
+          url: /posts/
           weight: 5
-        - name: Search
-          url: search/
+        - name: Shopware
+          url: shopware
           weight: 10
-        - name: Tags
-          url: tags/
-          weight: 10
-        - name: Categories
-          url: categories/
-          weight: 10
-
-#  fr:
-#    languageName: ":fr:"
-#    languageAltTitle: French
-#    weight: 2
-#    title: PaperModL2
-#    profileMode:
-#      enabled: true
-#      title: PaperMod
-#      # imageUrl: "#"
-#      # imageTitle: my image
-#      # imageWidth: 120
-#      # imageHeight: 120
-#      subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
-#      buttons:
-#        - name: Blog
-#          url: posts
-#        - name: Tags
-#          url: tags
-#    menu:
-#      main:
-#        - name: Archive
-#          url: archives/
-#          weight: 5
-#        - name: Tags
-#          url: tags
-#          weight: 10
-#        - name: Categories
-#          url: categories
-#          weight: 10
-#        - name: Series
-#          url: series
-#          weight: 10
-#        - name: NullLink
-#          url: "#"
-#        - name: NullLink2
-#          url: "#"
-#        - name: NullLink3
-#          url: "#"
-#
-#  fa:
-#    languagedirection: rtl
-#    weight: 3
-#    title: PaperMod RTL
-#    homeInfoParams:
-#      Title: "Hi there \U0001F44B"
-#      Content: Welcome to RTL layout
-#    menu:
-#      main:
-#        - name: Tags
-#          url: tags
-#          weight: 10
+        - name: Technology
+          url: technology
+          weight: 15
+        - name: About
+          url: /posts/about/
+          weight: 20
 
 outputs:
   home:
@@ -95,9 +43,7 @@ outputs:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "Blog to talk about technology, Shopware, and whatever else I feel like!"
-  author: Me
-  # author: ["Me", "You"] # multiple authors
-
+  author: Huzaifa
   defaultTheme: auto
   # disableThemeToggle: true
   ShowShareButtons: true
@@ -107,9 +53,9 @@ params:
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
-  ShowToc: true
+  ShowToc: false
   # comments: false
-  images: ["draft-cover.png"]
+  images: [ "draft-cover.png" ]
 
   profileMode:
     enabled: false
@@ -126,26 +72,32 @@ params:
 
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog. Let's talk about tech.
+    Content: >
+      ### My name is Huzaifa Mustafa.
+
+      ---
+
+      I am a full-stack developer with more than seven years of professional development experience.
+      I am here to blog about tech, and whatever else I feel like!
 
   socialIcons:
     - name: github
       url: "https://github.com/zaifastafa/huzaifa-blog"
     - name: twitter
       url: "https://twitter.com/_huzaifamustafa"
-    - name: website
+    - name: me
       url: "https://huzaifamustafa.com"
-    - name: RsS
-      url: "index.xml"
+  #    - name: RsS
+  #      url: "index.xml"
 
-#  editPost:
-#    URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
-#    Text: "Suggest Changes" # edit text
-#    appendFilePath: true # to append file path to Edit link
+  #  editPost:
+  #    URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+  #    Text: "Suggest Changes" # edit text
+  #    appendFilePath: true # to append file path to Edit link
 
   label:
     text: "Huzaifa's Blog"
-    icon: /apple-touch-icon.png
+    icon: /me.png
     iconHeight: 35
 
   # analytics:
@@ -173,10 +125,10 @@ params:
 #       minMatchCharLength: 0
 #       keys: ["title", "permalink", "summary", "content"]
 
-taxonomies:
-  category: categories
-  tag: tags
-  series: series
+#taxonomies:
+#  category: categories
+#  tag: tags
+#  series: series
 
 markup:
   goldmark:
