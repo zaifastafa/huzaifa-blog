@@ -13,26 +13,26 @@ googleAnalytics: G-0JBCZTN2B4
 
 minify:
   disableXML: true
-  # minifyOutput: true
+  minifyOutput: true
 
-languages:
-  en:
-    languageName: "English"
-    weight: 1
-    menu:
-      main:
-        - name: General
-          url: /posts/
-          weight: 5
-        - name: Shopware
-          url: shopware
-          weight: 10
-        - name: Technology
-          url: technology
-          weight: 15
-        - name: About
-          url: /posts/about/
-          weight: 20
+menu:
+  main:
+    - identifier: Home
+      name: Home
+      url: /
+      weight: 5
+#    - identifier: shopware
+#      name: Shopware
+#      url: /shopware
+#      weight: 10
+    - identifier: technology
+      name: Technology
+      url: /technology
+      weight: 15
+    - identifier: About
+      name: About
+      url: /about
+      weight: 20
 
 outputs:
   home:
@@ -44,14 +44,14 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "Blog to talk about technology, Shopware, and whatever else I feel like!"
   author: Huzaifa
-  defaultTheme: auto
+  defaultTheme: dark
   # disableThemeToggle: true
   ShowShareButtons: true
   ShowReadingTime: true
   # disableSpecial1stPost: true
   displayFullLangName: true
   ShowPostNavLinks: true
-  ShowBreadCrumbs: true
+  ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowToc: false
   # comments: false
@@ -74,11 +74,10 @@ params:
     Title: "Hi there \U0001F44B"
     Content: >
       ### My name is Huzaifa Mustafa.
-
-      ---
+      <br/><br/>
 
       I am a full-stack developer with more than seven years of professional development experience.
-      I am here to blog about tech, and whatever else I feel like!
+      I am here to blog about technology, tips and tricks, and general helpful resources for web development.
 
   socialIcons:
     - name: github
@@ -111,10 +110,10 @@ params:
   #     apple_touch_icon: "<link / abs url>"
   #     safari_pinned_tab: "<link / abs url>"
 
-  # cover:
-  #     hidden: true # hide everywhere but not in structured data
-  #     hiddenInList: true # hide on list pages and home
-  #     hiddenInSingle: true # hide on single page
+#   cover:
+#       hidden: true # hide everywhere but not in structured data
+#       hiddenInList: true # hide on list pages and home
+#       hiddenInSingle: true # hide on single page
 
 #   fuseOpts:
 #       isCaseSensitive: false

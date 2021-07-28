@@ -2,7 +2,7 @@
 author: "Huzaifa"
 title: "Welcome to my blog"
 aliases: ["/welcome-to-my-blog"]
-summary: 
+summary: I this introductory post, I talk about a brief introduction to the blog, how it all started for me, and what you can expect from it.
 date: "2021-07-17"
 draft: false
 tags: ["beginning", "intro", "blog", "tech", "webdevelopment"]
