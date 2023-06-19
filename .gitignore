@@ -37,3 +37,6 @@ next-env.d.ts
 
 # contentlayer
 .contentlayer
+
+# static folder for DigitalOcean App Platform
+_static
