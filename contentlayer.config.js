@@ -21,11 +21,15 @@ const Post = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    summary: {
+    description: {
       type: 'string',
       required: true,
     },
     category: {
+      type: 'string',
+      required: false,
+    },
+    keywords: {
       type: 'string',
       required: false,
     },

@@ -13,14 +13,14 @@ export default function PostItem({ ...props }) {
           </div>
           <h3 className="font-aspekta text-lg font-[650] mb-1">
             <Link
-              className="inline-flex relative hover:text-custom-yellow-500 duration-150 ease-out before:scale-x-0 before:origin-center before:absolute before:inset-0 before:bg-custom-yellow-200 dark:before:bg-custom-yellow-500 before:opacity-30 before:-z-10 before:translate-y-1/4 before:-rotate-2 hover:before:scale-100 before:duration-150 before:ease-in-out"
+              className="inline-flex relative hover:text-custom-yellow-600 dark:hover:text-custom-yellow-500 duration-150 ease-out before:scale-x-0 before:origin-center before:absolute before:inset-0 before:bg-custom-yellow-200 dark:before:bg-custom-yellow-500 before:opacity-30 before:-z-10 before:translate-y-1/4 before:-rotate-2 hover:before:scale-100 before:duration-150 before:ease-in-out"
               href={`/${props.slug}`}
             >
               {props.title}
             </Link>
           </h3>
           <div className="flex">
-            <div className="grow text-sm text-slate-500 dark:text-slate-400">{props.summary}</div>
+            <div className="grow text-sm text-slate-500 dark:text-slate-400">{props.description}</div>
             <Link className="hidden lg:flex shrink-0 text-custom-yellow-500 items-center justify-center w-12 group" href={`/${props.slug}`} tabIndex={-1}>
               <svg
                 className="fill-current group-hover:translate-x-2 duration-150 ease-in-out"
