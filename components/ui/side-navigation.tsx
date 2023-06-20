@@ -45,7 +45,7 @@ export default function SideNavigation() {
               {/*    className={`w-full h-6 flex items-center justify-center relative after:absolute after:w-0.5 after:right-0 after:top-0 after:bottom-0 ${pathname === '/about'*/}
               {/*      ? 'text-custom-yellow-500 after:bg-custom-yellow-500'*/}
               {/*      : 'text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400'*/}
-              {/*    }`}                  */}
+              {/*    }`}*/}
               {/*  >*/}
               {/*    <span className="sr-only">About</span>*/}
               {/*    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20">*/}
@@ -54,21 +54,21 @@ export default function SideNavigation() {
               {/*    </svg>*/}
               {/*  </Link>*/}
               {/*</li>*/}
-              {/*<li className="py-2">*/}
-              {/*  <Link*/}
-              {/*    href="/subscribe"*/}
-              {/*    className={`w-full h-6 flex items-center justify-center relative after:absolute after:w-0.5 after:right-0 after:top-0 after:bottom-0 ${pathname === '/subscribe'*/}
-              {/*      ? 'text-custom-yellow-500 after:bg-custom-yellow-500'*/}
-              {/*      : 'text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400'*/}
-              {/*      }`} */}
-              {/*  >*/}
-              {/*    <span className="sr-only">Subscribe</span>*/}
-              {/*    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="21" height="21">*/}
-              {/*      <path fillOpacity=".16" d="m13.4 18-3-7.4-7.4-3L19 2z" />*/}
-              {/*      <path d="M13.331 15.169 17.37 3.63 5.831 7.669l5.337 2.163 2.163 5.337Zm-3.699-3.801L.17 7.53 20.63.37l-7.161 20.461-3.837-9.463Z" />*/}
-              {/*    </svg>*/}
-              {/*  </Link>*/}
-              {/*</li>*/}
+              <li className="py-2">
+                <Link
+                  href="/subscribe"
+                  className={`w-full h-6 flex items-center justify-center relative after:absolute after:w-0.5 after:right-0 after:top-0 after:bottom-0 ${pathname === '/subscribe'
+                    ? 'text-custom-yellow-500 after:bg-custom-yellow-500'
+                    : 'text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400'
+                    }`}
+                >
+                  <span className="sr-only">Subscribe</span>
+                  <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="21" height="21">
+                    <path fillOpacity=".16" d="m13.4 18-3-7.4-7.4-3L19 2z" />
+                    <path d="M13.331 15.169 17.37 3.63 5.831 7.669l5.337 2.163 2.163 5.337Zm-3.699-3.801L.17 7.53 20.63.37l-7.161 20.461-3.837-9.463Z" />
+                  </svg>
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

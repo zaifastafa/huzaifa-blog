@@ -37,7 +37,7 @@ const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (doc) => slugify(doc.title, {lower: true}),
+      resolve: (doc) => slugify(doc.title, {lower: true, strict: true}),
     }
   },
 }))

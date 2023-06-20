@@ -27,7 +27,7 @@ export default function Subscribe() {
               {/* Page content */}
               <div className="text-slate-500 dark:text-slate-400 space-y-8">
                 <p className="text-lg">
-                  This newsletter is written by Mark Ivings, who previously worked at Google, Medium, Vimeo, and Qonto. Here is what to expect
+                  This newsletter is written by Huzaifa Mustafa, who previously worked at several tech companies. Here is what to expect
                   by subscribing:
                 </p>
                 <ul className="space-y-4">
@@ -39,7 +39,7 @@ export default function Subscribe() {
                     >
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
-                    <span>Big tech and high-growth startups, from the inside.</span>
+                    <span>Stay Up-to-Date: Never miss a beat with the latest posts and crucial updates.</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -49,7 +49,7 @@ export default function Subscribe() {
                     >
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
-                    <span>Actionable advice for engineering managers, software engineers and tech workers.</span>
+                    <span>Exclusive Content: Unlock access to in-depth guides and personal insights, exclusive to subscribers.</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -59,7 +59,7 @@ export default function Subscribe() {
                     >
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
-                    <span>A pulse on the tech market and scoop worth knowing.</span>
+                    <span>Practical Tips and Code Snippets: Boost your skills with useful tips and coding shortcuts delivered straight to your inbox.</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -69,19 +69,15 @@ export default function Subscribe() {
                     >
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
-                    <span>An independent viewpoint.</span>
+                    <span>Community Connection: Join a vibrant community of learners and tech enthusiasts for engaging discussions and networking.</span>
                   </li>
                 </ul>
                 <div>
                   {/* Subscribe form */}
-                  <form>
-                    <div className="flex flex-col md:flex-row justify-center max-w-xs mx-auto md:max-w-md md:mx-0">
-                      <input
-                        type="email"
-                        className="form-input w-full mb-2 md:mb-0 md:mr-2"
-                        placeholder="Your email"
-                        aria-label="Your email\u2026"
-                      />
+                  <form id="sib-form" method="POST"
+                        action="https://b0f10eae.sibforms.com/serve/MUIFAN1uyP7tJt1oFXVpK3GjVcLETSWUFdMRAAzcNa6fnlk_Bn6U5oxXLDyXQhARRP2l3B1q7ev5bZA0NWazTJFN_g3JiTZoyIXUJtaOFqK1_dnzz5dsXuQUO3-mVzz78I6olkkhPmZfjD94V4rWOylEMtgCXlJt-iusn4VYKuBgpb5RXNg5ItWVSQY8NZWzpLqOvIF8Tcs6Vghl">
+
+                    <div className="flex flex-col md:flex-row max-w-xs mx-auto md:max-w-md md:mx-0">
                       <button className="btn text-black bg-custom-yellow-500 hover:bg-custom-yellow-600">
                         Subscribe
                       </button>
@@ -127,8 +123,9 @@ export default function Subscribe() {
                         alt="Avatar 05"
                       />
                     </div>
-                    <div className="text-sm text-slate-500 ml-3">Join 100K+ developers.</div>
+                    <div className="text-sm text-slate-500 ml-3">Subscribe and join several others.</div>
                   </div>
+
                 </div>
               </div>
             </section>
@@ -143,13 +140,12 @@ export default function Subscribe() {
                   <div className="flex flex-col h-full">
                     <div className="grow">
                       <Image className="rounded-full mb-2" src={Testimonial01} width={40} height={40} alt="Testimonial 01" />
-                      <div className="text-lg font-aspekta font-[650] mb-1">“ Incredible Value “</div>
+                      <div className="text-lg font-aspekta font-[650] mb-1">“ The Best Newsletter “</div>
                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">
-                        I was able to quickly master the skills necessary to advance my career. I'm grateful for the resources Mark provided
-                        and would recommend him to anyone.
+                        Subscribing to this newsletter has been one of the best decisions I've made this year. The blend of personal insights, technical deep-dives, and practical tips is truly unique. I appreciate the variety and quality of content, it feels like a personal mentor guiding me through the world of technology. Each edition leaves me more enlightened and excited about the future of the tech industry
                       </p>
                     </div>
-                    <div className="text-xs font-aspekta font-[650] text-custom-yellow-500">— Mary Coyle</div>
+                    <div className="text-xs font-aspekta font-[650] text-custom-yellow-500">— Alexa Williams, Software Developer</div>
                   </div>
                 </a>
                 <a
@@ -159,13 +155,12 @@ export default function Subscribe() {
                   <div className="flex flex-col h-full">
                     <div className="grow">
                       <Image className="rounded-full mb-2" src={Testimonial02} width={40} height={40} alt="Testimonial 02" />
-                      <div className="text-lg font-aspekta font-[650] mb-1">“ The Best Newsletter “</div>
+                      <div className="text-lg font-aspekta font-[650] mb-1">“ Incredible Value “</div>
                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">
-                        I was able to quickly master the skills necessary to advance my career. I'm grateful for the resources Mark provided
-                        and would recommend him to anyone.
+                        The depth and diversity of the content are what keep me subscribed to this newsletter. From the latest trends in Shopware to exclusive code snippets and the engaging community discussions, there's always something to look forward to in each issue. It's more than just a newsletter, it's a treasure trove of resources for any tech enthusiast.
                       </p>
                     </div>
-                    <div className="text-xs font-aspekta font-[650] text-custom-yellow-500">— Daniel Burka</div>
+                    <div className="text-xs font-aspekta font-[650] text-custom-yellow-500">— Daniel Smith, E-commerce Consultant</div>
                   </div>
                 </a>
               </div>

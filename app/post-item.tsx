@@ -3,6 +3,12 @@ import Image from 'next/image'
 import PostDate from '@/components/post-date'
 
 export default function PostItem({ ...props }) {
+
+  // Replace `content` with the actual content of your post
+  const wordsPerMinute = 250;
+  const wordCount = props.body.code.split(' ').length;
+  const estimatedTime = Math.ceil(wordCount / wordsPerMinute);
+
   return (
     <article className="py-5 border-b border-slate-100 dark:border-slate-800">
       <div className="flex items-start">
@@ -10,6 +16,7 @@ export default function PostItem({ ...props }) {
         <div>
           <div className="text-xs text-slate-500 uppercase mb-1">
             <span className="text-custom-yellow-500">—</span> <PostDate dateString={props.publishedAt} />
+            <span className="ml-1 text-xs inline-flex">·</span> {estimatedTime} minute{estimatedTime !== 1 && 's'} Read
           </div>
           <h3 className="font-aspekta text-lg font-[650] mb-1">
             <Link

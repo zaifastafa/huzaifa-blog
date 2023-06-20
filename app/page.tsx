@@ -3,7 +3,8 @@ import Hero from '@/components/hero'
 import PostItem from './post-item'
 import WidgetNewsletter from '@/components/widget-newsletter'
 import WidgetSponsor from '@/components/widget-sponsor'
-import Footer from "@/components/ui/footer";
+import Talks from "@/components/talks";
+import Projects from "@/components/projects";
 // import WidgetBook from '@/components/widget-book'
 
 export const metadata = {
@@ -43,8 +44,8 @@ export default async function Home() {
               </section>
 
 
-              {/*<Talks />*/}
-              {/*<Projects />*/}
+              {/*<Talks/>*/}
+              {/*<Projects/>*/}
 
             </div>
           </div>

@@ -47,7 +47,7 @@ export default async function SinglePost({params}: {
                     {/* Back */}
                     <div className="mb-3">
                         <Link
-                            className="inline-flex text-custom-yellow-600 rounded-full border border-slate-200 dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30"
+                            className="inline-flex text-custom-yellow-600 dark:text-custom-yellow-500 rounded-full border border-slate-200 dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30"
                             href="/"
                         >
                             <span className="sr-only">Back</span>
@@ -63,7 +63,7 @@ export default async function SinglePost({params}: {
                         <header>
                             <div className="flex items-center justify-between mb-1">
                                 {/* Post date */}
-                                <div className="text-xs text-custom-yellow-600 darK:text-custom-yellow-500 uppercase">
+                                <div className="text-xs text-custom-yellow-600 dark:text-custom-yellow-500 uppercase">
                                     <span className="text-custom-yellow-500">—</span> <PostDate
                                     dateString={post.publishedAt}/> <span
                                     className="text-slate-400 dark:text-slate-600">·</span> {estimatedTime} minute{estimatedTime !== 1 && 's'} Read
