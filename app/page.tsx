@@ -10,6 +10,9 @@ import Projects from "@/components/projects";
 export const metadata = {
   title: 'Huzaifa\'s Kaleidoscope',
   description: 'Welcome to \'Huzaifa\'s Kaleidoscope\', an intimate exploration of ideas, experiences, and reflections. Just as a kaleidoscope reveals a constantly changing pattern of shapes and colors, here you\'ll find a vibrant mix of topics – from personal anecdotes to deep dives into technology, culture, and beyond. Each post offers a fresh perspective, representing the ever-evolving landscape of Huzaifa\'s mind. Join us on this journey through a world as diverse, engaging, and unpredictable as a kaleidoscope\'s view.',
+  alternates: {
+    canonical: 'https://blog.huzaifamustafa.com',
+  },
 }
 
 export default async function Home() {

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import HeroImage from '@/public/images/me.jpg'
+import HeroImage from '@/public/images/kaleidoscope.webp'
 
 export default function Hero() {
   return (

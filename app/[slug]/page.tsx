@@ -7,6 +7,7 @@ import PostDate from '@/components/post-date'
 import WidgetNewsletter from '@/components/widget-newsletter'
 import WidgetSponsor from '@/components/widget-sponsor'
 import WidgetPosts from '@/components/widget-posts'
+import HeroImage from "@/public/images/kaleidoscope.webp";
 
 export async function generateStaticParams() {
     return allPosts.map((post) => ({
@@ -14,15 +15,30 @@ export async function generateStaticParams() {
     }))
 }
 
-export async function generateMetadata({params}: {
-    params: { slug: string }
-}): Promise<Metadata | undefined> {
-
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | undefined> {
     const post = allPosts.find((post) => post.slug === params.slug)
-
     if (!post) return
 
-    return post;
+    return {
+        title: `${post.title} | Huzaifa's Kaleidoscope`,
+        description: post.description,
+        alternates: {
+            canonical: `https://blog.huzaifamustafa.com/${post.slug}`,
+        },
+        openGraph: {
+            title: post.title,
+            description: post.description,
+            url: `https://blog.huzaifamustafa.com/${post.slug}`,
+            type: 'article',
+            images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
+        },
+        twitter: {
+            title: post.title,
+            description: post.description,
+            creator: '@_huzaifamustafa',
+            images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
+        }
+    }
 }
 
 export default async function SinglePost({params}: {

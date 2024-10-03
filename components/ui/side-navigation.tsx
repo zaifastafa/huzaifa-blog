@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import HeroImage from '@/public/images/me.jpg'
+import HeroImage from '@/public/images/kaleidoscope.webp'
 
 export default function SideNavigation() {
 
