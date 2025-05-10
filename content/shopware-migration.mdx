@@ -6,135 +6,75 @@ description: "Step-by-step guide for developers to migrate from Shopware 5 to Sh
 publishedAt: 2023-05-10
 ---
 
-<article className="prose md:prose-lg max-w-none">
+![Post](/images/shopware-migration-concept.png)
 
-    <h1 className="text-3xl font-extrabold mb-6">
-        Kick-Start Your Shopware 5 → Shopware 6 Migration
-    </h1>
+# Kick-Start Your Shopware 5 → Shopware 6 Migration
 
-    <p className="mb-4 leading-relaxed">
-        Moving from Shopware 5 to Shopware 6 can feel daunting, even for an experienced <strong>developer</strong>.
-        The new platform brings a modern API-first core, Symfony underpinnings, and a refreshed admin.
-        This guide walks you through a basic but production-ready <strong>migration</strong>,
-        showing the main tasks, common pitfalls, and the tools Shopware provides.
-        By the end you’ll have your catalog, customers, and orders running on
-        Shopware 6—and a clear path for further custom work.
-    </p>
+Moving from Shopware 5 to Shopware 6 can feel daunting, even for an experienced **developer**.
+The new platform brings a modern API-first core, Symfony underpinnings, and a refreshed admin.
+This guide walks you through a basic but production-ready **migration**, showing the main tasks, common pitfalls, and the tools Shopware provides.
+By the end you’ll have your catalog, customers, and orders running on Shopware 6—and a clear path for further custom work.
 
-    <h2 className="text-2xl font-bold mt-10 mb-3">
-        1. Audit Your Current Shopware 5 Store
-    </h2>
+## 1. Audit Your Current Shopware 5 Store
 
-    <p className="mb-4 leading-relaxed">
-        Every successful <strong>shopware migration</strong> starts with a solid inventory of what you have.
-        Log into the SW5 backend and list:
-    </p>
+Every successful **shopware migration** starts with a solid inventory of what you have. Log into the SW5 backend and list:
 
-    <ul className="list-disc ml-6 mb-4">
-        <li>Installed plugins (note any custom extensions).</li>
-        <li>Number of products, variants, manufacturers.</li>
-        <li>Customer groups, price rules, promotion logic.</li>
-        <li>Theme overrides in <code>/themes/Frontend</code>.</li>
-    </ul>
+- Installed plugins (note any custom extensions)
+- Number of products, variants, manufacturers
+- Customer groups, price rules, promotion logic
+- Theme overrides in `/themes/Frontend`
 
-    <p className="mb-4 leading-relaxed">
-        Export this data to a spreadsheet so you can tick items off later.
-        If you maintain the project in Git, tag the current state (<code>git tag sw5-final-backup</code>).
-        This step protects you from surprises and helps you estimate effort where
-        plugins lack a Shopware 6 counterpart.
-    </p>
+Export this data to a spreadsheet so you can tick items off later.
+If you maintain the project in Git, tag the current state (`git tag sw5-final-backup`).
+This step protects you from surprises and helps you estimate effort where plugins lack a Shopware 6 counterpart.
 
-    <h2 className="text-2xl font-bold mt-10 mb-3">
-        2. Spin Up a Clean Shopware 6 Environment
-    </h2>
+## 2. Spin Up a Clean Shopware 6 Environment
 
-    <p className="mb-4 leading-relaxed">
-        For anything more than a hobby shop you
-        should run Shopware 6 on PHP 8.2+, MySQL 8, and at least 4 GB RAM.
-        As a <strong>developer</strong> you have three common options:
-    </p>
+For anything more than a hobby shop you should run Shopware 6 on PHP 8.2+, MySQL 8, and at least 4 GB RAM.
+As a **developer** you have three common options:
 
-    <ol className="list-decimal ml-6 mb-4">
-        <li><strong>Docker:</strong> Clone <code>shopware/production</code> and run <code>docker compose up</code>.</li>
-        <li><strong>Local LAMP/LEMP:</strong> Good for debugging Xdebug sessions.</li>
-        <li><strong>Cloud sandbox:</strong> Shopware Cloud offers a free tier—handy for demos.</li>
-    </ol>
+1. **Docker:** clone `shopware/production` and run `docker compose up`
+2. **Local LAMP/LEMP:** good for debugging Xdebug sessions
+3. **Cloud sandbox:** Shopware Cloud offers a free tier—handy for demos
 
-    <p className="mb-4 leading-relaxed">
-        After installation, create an admin account and keep credentials safe.
-        Do <code>bin/console system:generate-jwt-secret</code> so API calls work,
-        then enable the <em>Migration Assistant</em> plugin from the Store.
-    </p>
+After installation, create an admin account and keep credentials safe.
+Run `bin/console system:generate-jwt-secret` so API calls work, then enable the *Migration Assistant* plugin from the Store.
 
-    <h2 className="text-2xl font-bold mt-10 mb-3">
-        3. Configure the Migration Assistant
-    </h2>
+## 3. Configure the Migration Assistant
 
-    <p className="mb-4 leading-relaxed">
-        The Migration Assistant is the official bridge between versions.
-        You’ll find it under <strong>Settings → Migration</strong>.
-        Click <em>Add Connection</em>, choose <code>Shopware 5</code> as the source,
-        and enter the SW5 database credentials plus the live shop URL.
-        The assistant pings an API endpoint called the <em>SwagMigrationConnector</em>.
-        Install that connector in Shopware 5 like any other plugin and clear caches.
-    </p>
+The Migration Assistant is the official bridge between versions.
+Open **Settings → Migration**, click *Add connection*, choose `Shopware 5` as the source, and enter the SW5 database credentials plus the live shop URL.
+On the old shop, install the companion plugin *SwagMigrationConnector* and clear caches.
 
-    <div className="bg-gray-100 rounded p-4 mb-6 text-sm">
-        <strong>Tip for devs:</strong> If you can’t expose your local DB, set an SSH tunnel:<br/>
-        <code>ssh -L 3308:127.0.0.1:3306 user@sw5-server</code>
-    </div>
+> **Tip for devs:** If you can’t expose your local DB, set an SSH tunnel:
+> `ssh -L 3308:127.0.0.1:3306 user@sw5-server`
 
-    <p className="mb-4 leading-relaxed">
-        Back in Shopware 6, run the <em>pre-checks</em>. The wizard flags incompatible plugins,
-        or large media folders that could stall the first pass.
-        Fix red items before continuing; amber items are warnings only.
-    </p>
+Back in Shopware 6, run the *pre-checks*. The wizard flags incompatible plugins or large media folders that could stall the first pass.
+Fix red items before continuing; amber items are warnings only.
 
-    <h2 className="text-2xl font-bold mt-10 mb-3">
-        4. Migrate Data in Manageable Batches
-    </h2>
+## 4. Migrate Data in Manageable Batches
 
-    <p className="mb-4 leading-relaxed">
-        Click <em>Start migration</em> and select the data sets you need:
-        Products, Categories, Customers, Orders, SEO URLs, Media.
-        For a basic store, migrate everything except Logs and Statistics.
-        The assistant shows a live progress bar.
-        Under the hood it transfers data to temporary JSON files,
-        validates them against Shopware 6 schemas, then writes to the DB.
-    </p>
+Click *Start migration* and select the data you need: Products, Categories, Customers, Orders, SEO URLs, Media.
+For a basic store, migrate everything except Logs and Statistics. The assistant shows a live progress bar.
+Under the hood it transfers data to temporary JSON files, validates them against Shopware 6 schemas, then writes to the DB.
 
-    <p className="mb-4 leading-relaxed">
-        If you’re moving thousands of products, split the job:
-        first migrate <em>Products &amp; Categories</em>, then <em>Customers &amp; Orders</em>.
-        This keeps PHP memory low and lets your team test each chunk sooner.
-        Should the process stop, click <em>Resume</em>;
-        the assistant is idempotent and will pick up where it left off.
-    </p>
+If you’re moving thousands of products, split the job: first migrate *Products & Categories*, then *Customers & Orders*.
+This keeps PHP memory low and lets your team test each chunk sooner. Should the process stop, click *Resume*; the assistant is idempotent and will pick up where it left off.
 
-    <h2 className="text-2xl font-bold mt-10 mb-3">
-        5. Verify, Theme, and Go Live
-    </h2>
+## 5. Verify, Theme, and Go Live
 
-    <p className="mb-4 leading-relaxed">
-        Once data lands in Shopware 6, open the new storefront preview.
-        Check that:
-    </p>
+Once data lands in Shopware 6, open the new storefront preview. Check that:
 
-    <ul className="list-disc ml-6 mb-4">
-        <li>All categories appear in the navigation.</li>
-        <li>Product detail pages show correct prices and variations.</li>
-        <li>Customer accounts list past orders.</li>
-        <li>Media loads from the <code>/media/</code> folder, not <code>/files/</code>.</li>
-    </ul>
+- All categories appear in the navigation
+- Product detail pages show correct prices and variations
+- Customer accounts list past orders
+- Media loads from the `/media/` folder, not `/files/`
 
-    <p className="mb-4 leading-relaxed">
-        Design-wise, Shopware 6 swaps the old Smarty theme for Twig blocks.
-        If you had heavy Twig overrides in SW5, port them one component at a time
-        (<code>@Storefront/storefront/page/product-detail</code> is a good start).
-        Keep styles in PostCSS or Tailwind; both compile cleanly with the Storefront build pipeline.
-    </p>
+Design-wise, Shopware 6 swaps the old Smarty theme for Twig blocks.
+If you had heavy Twig overrides in SW5, port them one component at a time (`@Storefront/storefront/page/product-detail` is a good start).
+Keep styles in PostCSS or Tailwind; both compile cleanly with the Storefront build pipeline.
 
-    <p className="mb-8 leading-relaxed">
-        Migration finished? Take a breath, then start exploring what Shopware 6 really offers—rule-based promotions, Flow Builder automations, and a headless-ready API that can power anything from PWAs to in-store kiosks. By nailing the basics today you’ve laid a future-proof foundation that your team, and your customers, will feel every time they click “Add to cart.”
-    </p>
-</article>
+## Closing Thoughts
+
+Migration finished? Take a breath, then start exploring what Shopware 6 really offers—rule-based promotions, Flow Builder automations, and a headless-ready API that can power anything from PWAs to in-store kiosks.
+By nailing the basics today you’ve laid a future-proof foundation that your team, and your customers, will feel every time they click “Add to cart.”
